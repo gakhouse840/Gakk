@@ -3,63 +3,310 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#a30e27">
-  <meta name="description" content="A história e os registros da GAK.">
+  <meta name="theme-color" content="#101014">
+  <meta name="description" content="A história da GAK, desde os tempos da BLL House até a criação de uma nova comunidade.">
   <title>História | GAK</title>
   <link rel="stylesheet" href="../css/style.css">
   <script src="../js/main.js" defer></script>
+
   <style>
-    .gak-page { max-width: 1000px; margin: auto; padding: 52px 22px 90px; }
-    .gak-page h1 { font-size: clamp(2.7rem, 8vw, 5.5rem); line-height: .95; margin: 20px 0; }
-    .gak-page h1 span { color: #a30e27; }
-    .gak-page p { line-height: 1.8; max-width: 720px; }
-    .gak-stamp { color: #a30e27; font: 700 .8rem monospace; letter-spacing: .12em; }
-    .gak-box { background: #fffaf8; border: 1px solid #a30e27; padding: 22px; margin: 28px 0; }
-    .gak-links { display: grid; grid-template-columns: repeat(auto-fit,minmax(145px,1fr)); gap: 12px; margin-top: 30px; }
-    .gak-links a { display: block; padding: 17px; border: 1px solid #a30e27; color: #a30e27; text-decoration: none; font-weight: bold; }
-    .gak-links a:hover { background: #a30e27; color: white; }
-    .gak-home { display: inline-block; color: #a30e27; margin: 10px 0 30px; }
+    body {
+      background: #101014;
+      color: #e8e0df;
+    }
+
+    .gak-page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 38px 22px 80px;
+    }
+
+    .gak-home {
+      display: inline-block;
+      margin: 8px 0 32px;
+      padding: 10px 14px;
+      color: #e7c6c8;
+      text-decoration: none;
+      border: 1px solid #71303b;
+      background: #1c171c;
+      box-shadow: inset 0 0 0 2px #292027;
+    }
+
+    .gak-home:hover {
+      background: #501722;
+      color: white;
+    }
+
+    .gak-stamp {
+      color: #c55a69;
+      font: 700 .76rem monospace;
+      letter-spacing: .14em;
+      line-height: 1.8;
+    }
+
+    .gak-page h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.5rem, 9vw, 5.5rem);
+      line-height: .98;
+      margin: 20px 0;
+      overflow-wrap: anywhere;
+      color: #f0e7e4;
+      text-shadow: 3px 3px #4d1521;
+    }
+
+    .gak-page h1 span {
+      color: #c34c60;
+    }
+
+    .gak-intro {
+      max-width: 680px;
+      color: #c5b6bb;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .gak-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 30px 0;
+      color: #a74a59;
+      letter-spacing: .15em;
+      font-size: .8rem;
+    }
+
+    .gak-divider::before,
+    .gak-divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, #78313e, transparent);
+    }
+
+    .gak-box {
+      position: relative;
+      margin: 26px 0;
+      padding: clamp(20px, 5vw, 38px);
+      background:
+        linear-gradient(135deg, #1c191e, #151419 60%, #20151b);
+      border: 3px ridge #837078;
+      outline: 1px solid #5d2632;
+      box-shadow:
+        inset 0 0 0 4px #21191f,
+        inset 0 0 0 6px #49313a,
+        0 6px 0 #08080a;
+    }
+
+    .gak-box h2 {
+      margin: 12px 0 18px;
+      color: #eadfe1;
+      font-family: Georgia, serif;
+      font-size: clamp(1.5rem, 5vw, 2.2rem);
+    }
+
+    .gak-box p {
+      max-width: 760px;
+      color: #d1c6ca;
+      line-height: 1.95;
+      margin: 15px 0;
+    }
+
+    .gak-quote {
+      margin: 28px 0;
+      padding: 20px;
+      border-left: 3px solid #a63b50;
+      background: #1c151b;
+      color: #e3c6cb;
+      font-family: Georgia, serif;
+      font-size: 1.15rem;
+      line-height: 1.8;
+    }
+
+    .gak-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .gak-links a {
+      display: flex;
+      min-height: 54px;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 13px 10px;
+      color: #ead9dc;
+      text-align: center;
+      text-decoration: none;
+      font: bold .8rem monospace;
+      letter-spacing: .06em;
+      background: linear-gradient(145deg, #38202a, #1c151c);
+      border: 3px ridge #80616a;
+      box-shadow: inset 0 0 0 2px #2a1921, 0 4px 0 #08080a;
+      transition: transform .18s, background .18s;
+    }
+
+    .gak-links a:hover,
+    .gak-links a:focus-visible {
+      background: linear-gradient(145deg, #7f2638, #401521);
+      transform: translateY(-3px);
+    }
+
+    .gak-footnote {
+      margin-top: 35px;
+      color: #84777e;
+      font: .75rem/1.8 monospace;
+      text-align: center;
+      letter-spacing: .08em;
+    }
+
+    @media (max-width: 520px) {
+      .gak-page {
+        padding: 26px 16px 60px;
+      }
+
+      .gak-box {
+        padding: 21px 17px;
+      }
+
+      .gak-box p {
+        line-height: 1.8;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .gak-links a {
+        transition: none;
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="topbar">
-    <a class="brand" href="../index.html"><span class="brand-mark">†</span><span>GAK<span class="brand-dot">.</span></span></a>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-      <span>MENU</span><span aria-hidden="true">☰</span>
+    <a class="brand" href="../index.html">
+      <span class="brand-mark">†</span>
+      <span>GAK<span class="brand-dot">.</span></span>
+    </a>
+
+    <button class="menu-toggle" type="button"
+      aria-expanded="false" aria-controls="main-nav">
+      <span>MENU</span>
+      <span aria-hidden="true">☰</span>
     </button>
+
     <nav id="main-nav" class="navigation" aria-label="Navegação principal">
       <a href="../index.html">INÍCIO</a>
-      <a href="historia.html">HISTÓRIA</a>
+      <a href="historia.html" aria-current="page">HISTÓRIA</a>
       <a href="regras.html">REGRAS</a>
       <a href="equipe.html">EQUIPE</a>
       <a href="vagas.html">VAGAS</a>
       <a href="parcerias.html">PARCERIAS</a>
       <a href="diego.html">DIEGO</a>
     </nav>
+
     <span class="system-status"><i></i> REGISTRO ABERTO</span>
   </header>
 
   <main class="gak-page">
     <a class="gak-home" href="../index.html">← VOLTAR AO INÍCIO</a>
-    <div class="gak-stamp">ARQUIVO 001 / ORIGEM NÃO CONFIRMADA</div>
-    <h1>OS OLHOS DOS<br><span>ANJOS SANGRAM.</span></h1>
-    <p>Todo arquivo tem uma origem. Nem todo arquivo concorda em contá-la.</p>
+
+    <div class="gak-stamp">ARQUIVO 002 / REGISTRO DE ORIGEM</div>
+
+    <h1>ANTES DA<br><span>GAK.</span></h1>
+
+    <p class="gak-intro">
+      Toda comunidade começa em algum lugar. A nossa começou antes
+      desse nome existir.
+    </p>
+
+    <div class="gak-divider">†  REGISTRO I  †</div>
 
     <section class="gak-box">
-      <div class="gak-stamp">REGISTRO DE ABERTURA</div>
-      <h2>O nascimento da GAK</h2>
-      <p>A GAK é uma comunidade criada para reunir pessoas, ideias e histórias em um espaço com identidade própria. Entre registros, encontros e transmissões, cada integrante deixa uma marca neste arquivo.</p>
-      <p>Este documento ainda está sendo escrito. Algumas páginas permanecem incompletas porque a história também é feita por quem chega depois.</p>
+      <div class="gak-stamp">CAPÍTULO 01 / BLL HOUSE</div>
+      <h2>Onde tudo começou</h2>
+
+      <p>
+        Antes da GAK, existia a BLL House. Foi ali que muita gente se
+        conheceu, conviveu e criou aquelas amizades que acabam rendendo
+        histórias próprias.
+      </p>
+
+      <p>
+        Entre conversas, brincadeiras e momentos compartilhados,
+        a BLL acabou se tornando parte da história de quem passou por ela.
+        Mesmo com o tempo passando, aquela fase não deixou de fazer parte
+        do que veio depois.
+      </p>
     </section>
 
-    <div class="gak-stamp">OUTROS REGISTROS</div>
-    <nav class="gak-links" aria-label="Outras páginas do arquivo">
+    <div class="gak-divider">†  REGISTRO II  †</div>
+
+    <section class="gak-box">
+      <div class="gak-stamp">CAPÍTULO 02 / NOVOS LAÇOS</div>
+      <h2>Gente que ficou</h2>
+
+      <p>
+        Com o tempo, a gente também se aproximou de outras pessoas,
+        incluindo os Resenhudos. As amizades foram se formando, e a ideia
+        de reunir essa galera de novo começou a tomar outra forma.
+      </p>
+
+      <p>
+        Não era simplesmente voltar ao que existia antes. Era pegar
+        aquilo que a gente viveu, levar as pessoas e as lembranças adiante
+        e construir alguma coisa com uma identidade diferente.
+      </p>
+    </section>
+
+    <div class="gak-divider">†  REGISTRO III  †</div>
+
+    <section class="gak-box">
+      <div class="gak-stamp">CAPÍTULO 03 / GAK</div>
+      <h2>Um nome novo, uma nova fase</h2>
+
+      <p>
+        Foi assim que surgiu a GAK: uma recriação daquela ideia de house,
+        com outro nome e uma estrutura mais bem trabalhada. Um espaço
+        que nasceu de relações que já existiam, mas que ganhou a própria
+        identidade.
+      </p>
+
+      <p>
+        A GAK não apaga o que veio antes. A BLL faz parte do caminho,
+        assim como as pessoas que passaram por essa história e os laços
+        que ajudaram a trazer a gente até aqui.
+      </p>
+
+      <p>
+        Agora, a história continua sendo escrita por quem faz parte dela.
+        O resto não precisa estar decidido desde o começo.
+      </p>
+
+      <blockquote class="gak-quote">
+        Algumas coisas mudam de nome. As histórias que trouxeram a gente
+        até aqui continuam fazendo parte de nós.
+      </blockquote>
+    </section>
+
+    <div class="gak-stamp">FIM DO REGISTRO / A HISTÓRIA CONTINUA</div>
+
+    <div class="gak-divider">†  OUTROS ARQUIVOS  †</div>
+
+    <nav class="gak-links" aria-label="Outras páginas da GAK">
+      <a href="../index.html">⌂ INÍCIO</a>
       <a href="regras.html">† REGRAS</a>
-      <a href="equipe.html">† EQUIPE</a>
-      <a href="vagas.html">† VAGAS</a>
-      <a href="parcerias.html">† PARCERIAS</a>
-      <a href="diego.html">† DIEGO</a>
+      <a href="equipe.html">♟ EQUIPE</a>
+      <a href="vagas.html">✳ VAGAS</a>
+      <a href="parcerias.html">✉ PARCERIAS</a>
+      <a href="diego.html">☠ DIEGO.EXE</a>
     </nav>
+
+    <p class="gak-footnote">
+      GAK · GLAZA ANGELOV KROVOTOCHAT<br>
+      ARQUIVO 002 — DOCUMENTO EM CONTINUAÇÃO
+    </p>
   </main>
 </body>
 </html>
